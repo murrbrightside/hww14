@@ -17,5 +17,19 @@ public class Author {
 
     }
 
+    public String toString(){
+        return "Имя " + this.firstName + " Фамилия " + this.lastName;
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        else return false;
+    }
+    public int hashCode(){
+        int result = 17;
+        result = 31 * result + lastName.hashCode();
+        result = 31 * result + firstName.hashCode();
+        return result;
+    }
 
 }
