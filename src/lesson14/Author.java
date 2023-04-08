@@ -20,9 +20,11 @@ public class Author {
     public String toString(){
         return "Имя " + this.firstName + " Фамилия " + this.lastName;
     }
-    @Override
+
     public boolean equals(Object obj) {
-        if (this == obj) return true;
+        Author otherAuthor = (Author) obj;
+        if (obj == null) return false;
+        if (otherAuthor == (Author) obj) return true;
         else return false;
     }
     public int hashCode(){

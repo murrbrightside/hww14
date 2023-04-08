@@ -1,11 +1,13 @@
 package lesson14;
 
 public class Book {
+    private String bookName;
     private String author;
     private int year;
     public Book(String author, int year){
         this.author = author;
         this.year = year;
+        this.bookName = bookName;
     }
     public String getAuthor(){
         return this.author;
@@ -13,6 +15,10 @@ public class Book {
     }
     public int getYear(){
         return this.year;
+
+    }
+    public String getBookName(){
+        return this.bookName;
 
     }
     public void setYear(int year){
@@ -26,5 +32,11 @@ public class Book {
         result = 31 * result + author.hashCode();
         result = 31 * result + year;
         return result;
+    }
+    public boolean equals(Object obj) {
+        Book otherBook = (Book) obj;
+        if (obj == null) return false;
+        if (otherBook == (Book) obj) return true;
+        else return false;
     }
 }
